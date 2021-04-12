@@ -11,15 +11,16 @@
  *
  */
 function getSumOfDigits(n) {
-  console.log('\nn: ', n, typeof n);
-  let tmp = String(n);
-  console.log('\ntmp: ', tmp, typeof tmp);
-  // while (String(tmp).length !== 1) {
-  // while (String(tmp).length !== 1) {
-  tmp = tmp.split('').reduce((sum, current) => sum + current, 0);
-  console.log('tmp: ', tmp, typeof tmp);
-  // }
-  return tmp;
+  let result = 100;
+  let str = n.toString();
+  while (result > 9) {
+    result = 0;
+    for (let i = 0; i <= str.length - 1; i++) {
+      result += parseInt(str[i], 10);
+    }
+    str = result.toString();
+  }
+  return result;
 }
 
 module.exports = getSumOfDigits;

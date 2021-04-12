@@ -17,7 +17,7 @@ function renameFiles(names) {
   const namesRes = [];
   const index = {};
   if (names.length) {
-    names.forEach((el, ind) => {
+    names.forEach((el) => {
       if (el in index) {
         namesRes.push(`${el}(${index[el]})`);
         index[`${el}(${index[el]})`] = 1;

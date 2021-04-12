@@ -13,14 +13,17 @@
  */
 
 function findIndex(array, value) {
+  // половинное деление
   let start = 0;
   let end = array.length - 1;
   while (start <= end) {
-    const mid = Math.floor((start + end) / 2);
-    const middle = array[mid];
-    if (middle === value) return mid;
-    if (middle > value) end = mid - 1;
-    else start = mid + 1;
+    const middleIndex = Math.floor((start + end) / 2);
+    const middle = array[middleIndex];
+    if (middle === value) {
+      return middleIndex;
+    }
+    if (middle > value)end = middleIndex - 1;
+    else start = middleIndex + 1;
   }
   return null;
 }
